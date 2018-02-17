@@ -1,7 +1,7 @@
 # Project Title
 How Drink Am I? 
 
-#What You Need to Know
+# What You Need to Know
 Created for hackCWRU 2018 - 
 We aim to provide a convenient solution to prevent blackout drinking.  Using a simple linear regression model, we can correlate the delay from a base reaction time with blood alcohol levels.  
 
