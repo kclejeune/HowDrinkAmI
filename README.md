@@ -21,8 +21,10 @@ Sherry Chen
 Chris Toomey
 
 ## License
+Creative Commons Attribution 3.0 Unported
+http://creativecommons.org/licenses/by/3.0/
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+Details available under LICENSE.txt
 
 ## Acknowledgments
 HTML5Up - for providing a sick website template
