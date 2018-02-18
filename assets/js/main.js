@@ -109,12 +109,12 @@
 		}
 
 		function reactionToBAC(){
-<<<<<<< HEAD
+
 			var bac = .0009*(reactionTime)+.0002;
 			var highBAC = Math.round(bac*1.1*1000) / 1000;
 			var lowBAC = Math.round(bac*.9*1000) / 1000;
 			return "" + lowBAC + " - " + highBAC;
-=======
+
 			var reactiondelta = reactionTime - baselineReaction;
 			if (reactiondelta < 44.22)
 				return "0.0-0.4";
