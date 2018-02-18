@@ -12,11 +12,63 @@
 	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 		margin: 0;
 		padding: 0;
-		border: 0;
 		font-size: 100%;
 		font: inherit;
 		vertical-align: baseline;
 	}
+
+.settingText {
+	font-size: 200% !important;
+	text-align: center;
+}
+
+.baseReactionMessage {
+	font-size: 200%;
+	text-align: center;
+
+	position: relative;
+	top: 7em;
+	left: 0.3em;
+	border-color: white;
+	border-style: solid;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-left: .5em;
+	padding-right: .5em;
+	border-radius: 4px;
+}
+
+.ReactionMessage {
+	font-size: 200%;
+	text-align: center;
+
+	position: relative;
+	top: 11em;
+	left: 0.3em;
+	border-color: white;
+	border-style: solid;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-left: .5em;
+	padding-right: .5em;
+	border-radius: 4px;
+}
+
+.settingOK {
+	font-size: 300% !important;
+	text-align: center;
+	border-style: solid;
+	border-radius: 4px;
+	border-color: white;
+	border-width: 1px;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+ul {
+	border-color: white;
+	border-radius: 4px;
+}
 
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 		display: block;
@@ -30,7 +82,11 @@
 		list-style: none;
 	}
 
-
+.begin {
+	border-radius: 4px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
 
 
 	blockquote, q {
@@ -136,7 +192,6 @@
 		-webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-		border-bottom: dotted 1px rgba(255, 255, 255, 0.5);
 		text-decoration: none;
 		color: inherit;
 	}
@@ -155,7 +210,7 @@
 	}
 
 	p {
-		margin: 0 0 2rem 0;
+		margin: 0 0 7rem 0;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -167,6 +222,9 @@
 		letter-spacing: 0.2rem;
 	}
 
+.ReactionTimeResults .close:before {
+	background-image: none !important;
+}
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 			color: inherit;
 			text-decoration: none;
@@ -174,12 +232,9 @@
 
 		h1.major, h2.major, h3.major, h4.major, h5.major, h6.major {
 			border-bottom: solid 1px #ffffff;
-			width: -moz-max-content;
-			width: -webkit-max-content;
-			width: -ms-max-content;
-			width: max-content;
 			padding-bottom: 0.5rem;
-			margin: 0 0 2rem 0;
+			margin: 0 0 9rem 0;
+			text-align: center;
 		}
 
 	h1 {
@@ -701,7 +756,11 @@
 	ul {
 		list-style: disc;
 		margin: 0 0 2rem 0;
-		padding-left: 1em;
+		text-align: center;
+		font-size: 400%;
+		border-color: white;
+		border-style: solid;
+		border
 	}
 
 		ul li {
@@ -1245,6 +1304,7 @@
 			border-top-width: 1px;
 			border-bottom-width: 1px;
 			max-width: 100%;
+			border-radius: 4px;
 		}
 
 			#header .content .inner {
@@ -1385,6 +1445,8 @@
 
 				#header .logo .icon:before {
 					font-size: 1.75rem;
+					padding-right: 6px;
+					padding-top: 7px;
 				}
 
 			#header .content .inner {
@@ -1405,7 +1467,7 @@
 			}
 
 				#header .content .inner {
-					padding: 2.5rem 0;
+					border-radius: 4px;
 				}
 
 				#header nav ul {
@@ -1501,9 +1563,8 @@
 
 			#main article .close {
 				display: block;
-				position: absolute;
-				top: 0;
-				right: 0;
+        position: static;
+
 				width: 4rem;
 				height: 4rem;
 				cursor: pointer;
@@ -1550,7 +1611,7 @@
 			}
 
 				#main article .close:before {
-					top: 0.875rem;
+					top: 0rem;
 					left: 0.875rem;
 					width: 2.25rem;
 					height: 2.25rem;
@@ -1562,7 +1623,8 @@
 		@media screen and (max-width: 480px) {
 
 			#main article {
-				padding: 3rem 1.5rem 0.5rem 1.5rem ;
+				padding: 0rem 1.5rem 0.5rem 1.5rem ;
+			  height: 40rem !important ;
 			}
 
 		}
