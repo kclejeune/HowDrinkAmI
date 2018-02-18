@@ -55,7 +55,7 @@
             randomReactionNumber = Math.floor($getRandomNumber());
 
             setTimeout(function () {
-                $("#react").find("p").text(randomReactionNumber);
+                $("#reactionNumber").find("p").text(randomReactionNumber);
             }, waitTime);
         };
 
