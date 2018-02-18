@@ -22,7 +22,6 @@
 		var showNumberTime = 0;
 		var numberOfReactions = 0;
 		var randomReactionNumber = 0;
-		var db = new PouchDB('baseline');
 
 
 		$stopTimer = function(event){
@@ -39,6 +38,11 @@
 				reactionTime = reactionTime/3;
 				if(baseline == 1) {
 					addTodo(reactionTime);
+					alert(reactionTime);
+					window.location.href = "./index.html";
+				} else {
+					$("#resultsH2").text("BAC: " + reactionToBAC());
+					window.location.href = "./index.html#ReactionTimeResults"
 				}
 			}
 		}
@@ -69,13 +73,14 @@
 
 		$(".reactionTestStartBtn").click(function() {
 			$(".reactionTest").css('background-color', '#808080');
-
+			$(".reactionTestStartBtn").css('visibility','hidden');
 			reactionTime = 0;
 			showNumberTime = 0;
 			numberOfReactions = 0;
 			randomReactionNumber = 0;
 
 			$getReaction();
+			$(".reactionTestStartBtn").css('visibility','visible');
 
 			$(".reactionTest").css('background-color', '#1B1F22');
 		});
@@ -100,6 +105,13 @@
 					console.log('Successfully posted a todo!');
 				}
 			});
+		}
+
+		function reactionToBAC(){
+			var bac = .0009*(reactionTime)+.0002;
+			var highBAC = Math.round(bac*1.1*1000) / 1000;
+			var lowBAC = Math.round(bac*.9*1000) / 1000; 
+			return "" + lowBAC + " - " + highBAC;
 		}
 
 		var	$window = $(window),
