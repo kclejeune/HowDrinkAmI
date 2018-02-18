@@ -19,6 +19,7 @@
 
 		var baseline = 0;
 		var reactionTime = 0;
+		var baselineReaction = 1000;
 		var showNumberTime = 0;
 		var numberOfReactions = 0;
 		var randomReactionNumber = 0;
@@ -87,7 +88,7 @@
 			}
 
 
-			$getReaction();
+			//$getReaction();
 		});
 
 
@@ -108,16 +109,11 @@
 		}
 
 		function reactionToBAC(){
-			var bac = .0009*(reactionTime)+.0002;
-			var highBAC = Math.round(bac*1.1*1000) / 1000;
-			var lowBAC = Math.round(bac*.9*1000) / 1000;
-			return "" + lowBAC + " - " + highBAC;
-
 			var reactiondelta = reactionTime - baselineReaction;
 			if (reactiondelta < 44.22)
-				return "0.0-0.4";
+				return "0.0-0.04";
 			if (reactiondelta >= 44.22 && reactiondelta < 77.56)
-			  return "0.4-0.7"
+			  return "0.04-0.07"
       		if (reactiondelta >= 77.56 && reactiondelta < 110.89)
 			  return "0.07-0.10"
 			if (reactiondelta >= 110.89 && reactiondelta < 144.22)
