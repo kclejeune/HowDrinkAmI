@@ -17,6 +17,35 @@
 
 	$(function() {
 
+		$(".reactionTestStartBtn").click(function() {
+			$(".reactionTest").css('background-color', '#808080');
+			$(".reactionTest").redraw();
+
+			var showNumberTime = $getcurrentTime() + $getRandomNumber();
+			var randomReactionNumber = Math.floor($getRandomNumber());
+
+			setTimeout(function() {
+  				$("#reactionNumber").text(randomReactionNumber);
+			}, Math.round($getRandomNumber()*1000));
+
+			$(".reactionTest").css('background-color', '#1B1F22');
+		});
+
+		$getcurrentTime = function(){
+			return Math.round((new Date()).getTime() / 1000);
+		}
+
+		$getRandomNumber = function(){
+			return (Math.random()*4+1);
+		}
+
+
+		$.fn.redraw = function(){
+  			$(this).each(function(){
+    			var redraw = this.offsetHeight;
+  			});
+		};
+
 		var	$window = $(window),
 			$body = $('body'),
 			$wrapper = $('#wrapper'),
