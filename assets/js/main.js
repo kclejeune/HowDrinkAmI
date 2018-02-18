@@ -37,7 +37,7 @@
                 $getReaction();
             } else {
                 reactionTime = reactionTime / 3;
-                $(".reactionTestStartBtn").css('visibility', 'visible');
+                //$(".reactionTestStartBtn").css('visibility', 'visible');
                 if (baseLine === 1) {
                     addCookie(reactionTime);
                     baseLine = 0;
@@ -67,10 +67,6 @@
         $("#btn4").click({button: 4}, $stopTimer);
 
         $(".begin").click(function () {
-            reactionTime = 0;
-            showNumberTime = 0;
-            numberOfReactions = 0;
-            randomReactionNumber = 0;
             baseLine = 1;
         });
 
@@ -81,14 +77,14 @@
             randomReactionNumber = 0;
 
 
-            $getReaction();
-            $(".reactionTestStartBtn").css('visibility', 'hidden');
             if (getCookie() == null && baseLine != 1) {
                 alert("Please set base reaction time.")
                 window.location.href = "./index.html#settings";
             } else {
                 baseLineReaction = parseFloat(getCookie());
+                $(".reactionTestStartBtn").css('visibility', 'hidden');
             }
+            $getReaction();
 
         });
 
