@@ -80,7 +80,6 @@
 
 			$getReaction();
 			$(".reactionTestStartBtn").css('visibility','hidden');
-
 			if(window.localStorage.getItem("baseline") == null) {
 				baselineReaction = 1000;
 			} else {
@@ -109,7 +108,6 @@
 		}
 
 		function reactionToBAC(){
-
 			var bac = .0009*(reactionTime)+.0002;
 			var highBAC = Math.round(bac*1.1*1000) / 1000;
 			var lowBAC = Math.round(bac*.9*1000) / 1000;
@@ -148,7 +146,6 @@
 			  return "Nausea may appear. Experiencing loss of motor control, judgment, and perception."
 			if (reactiondelta >= 222)
 			  return "May need help to stand or walk. Blackouts are likely at this level. Dangerous levels of alcohol are in your body. It’s probably best to stop."
->>>>>>> b54c59ff1de50cacd8e0599f7e5f36891acd6e9b
 		}
 
 		var	$window = $(window),
