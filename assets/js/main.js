@@ -17,6 +17,65 @@
 
 	$(function() {
 
+		var baseline = 0;
+		var reactionTime = 0;
+		var showNumberTime = 0;
+		var numberOfReactions = 0;
+		var randomReactionNumber = 0;
+
+
+		$stopTimer = function(event){
+			var timeNumberSelected = $getCurrentTime();
+			$("#reactionNumber").text("");
+			if(showNumberTime < timeNumberSelected && randomReactionNumber == event.data.button) {
+				reactionTime += timeNumberSelected - showNumberTime;
+				numberOfReactions++;
+			}
+
+			if (numberOfReactions < 3){
+				$getReaction();
+			} else {
+				alert(reactionTime/3000);
+			}
+		}
+
+		$getReaction = function(){
+			var waitTime = Math.round($getRandomNumber()*1000);
+			showNumberTime = $getCurrentTime() + waitTime;
+			randomReactionNumber = Math.floor($getRandomNumber());
+
+			setTimeout(function() {
+  				$("#reactionNumber").text(randomReactionNumber);
+			}, waitTime);
+		}
+
+		$("#btn1").click({button: 1}, $stopTimer);
+		$("#btn2").click({button: 2}, $stopTimer);
+		$("#btn3").click({button: 3}, $stopTimer);
+		$("#btn4").click({button: 4}, $stopTimer);
+
+		$(".reactionTestStartBtn").click(function() {
+			$(".reactionTest").css('background-color', '#808080');
+
+			reactionTime = 0;
+			showNumberTime = 0;
+			numberOfReactions = 0;
+			randomReactionNumber = 0;
+
+			$getReaction();
+
+			$(".reactionTest").css('background-color', '#1B1F22');
+		});
+
+
+		$getCurrentTime = function(){
+			return Math.round((new Date()).getTime());
+		}
+
+		$getRandomNumber = function(){
+			return (Math.random()*4+1);
+		}
+
 		var	$window = $(window),
 			$body = $('body'),
 			$wrapper = $('#wrapper'),
