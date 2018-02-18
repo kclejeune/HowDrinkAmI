@@ -38,11 +38,12 @@
 			} else {
 				reactionTime = reactionTime/3;
 				if(baseline == 1) {
-					addTodo(reactionTime);
-					alert(reactionTime);
+					addCookie(reactionTime);
+					baseline = 0;
 					window.location.href = "./index.html";
 				} else {
 					$("#resultsH2").text("BAC: " + reactionToBAC());
+					$("#resultsH3").text(reactionToPhrase());
 					window.location.href = "./index.html#ReactionTimeResults"
 				}
 			}
@@ -69,21 +70,21 @@
 			numberOfReactions = 0;
 			randomReactionNumber = 0;
 			baseline = 1;
-
 		});
 
 		$(".reactionTestStartBtn").click(function() {
-			$(".reactionTest").css('background-color', '#808080');
-			$(".reactionTestStartBtn").css('visibility','hidden');
 			reactionTime = 0;
 			showNumberTime = 0;
 			numberOfReactions = 0;
 			randomReactionNumber = 0;
 
-			$getReaction();
-			$(".reactionTestStartBtn").css('visibility','visible');
+			if(window.localStorage.getItem("baseline") == null) {
+				baselineReaction = 1000;
+			} else {
+				baselineReaction = parseFloat(window.localStorage.getItem("baseline"));
+			}
 
-			$(".reactionTest").css('background-color', '#1B1F22');
+			$getReaction();
 		});
 
 
@@ -95,35 +96,48 @@
 			return (Math.random()*4+1);
 		}
 
-		function addTodo(base) {
-			var todo = {
-				_id: 1,
-				baseline: base
-			};
+		function addCookie(base) {
+			window.localStorage.setItem("baseline", base);
+		}
 
-			db.put(todo, function callback(err, result) {
-				if (!err) {
-					console.log('Successfully posted a todo!');
-				}
-			});
+		function getCookie() {
+			return window.localStorage.getItem("baseline");
 		}
 
 		function reactionToBAC(){
 			var reactiondelta = reactionTime - baselineReaction;
 			if (reactiondelta < 44.22)
-				return "0.0-0.4 <br> No loss of coordination, slight euphoria and loss of shyness. Mildly relaxed and maybe a little lightheaded.";
-			if (reactiondelta >= 44.22 && < 77.56)
-			  return "0.4-0.7 <br> Some minor impairment of reasoning and memory, lowering of caution. Your behavior may become exaggerated and emotions intensified."
-      if (reactiondelta >= 77.56 && < 110.89)
-			  return "0.07-0.10 <br> Your reaction time is starting to be impaired. It is illegal to drive at this level."
-		  if (reactiondelta >= 110.89 && < 144.22)
-			  return "0.10-0.13 <br> Significant impairment of motor coordination, speech balance, vision, hearing and loss of good judgment."
-			if (reactiondelta >= 144.22 && < 177.56)
-			  return "0.13-0.16 <br> Loss of motor control. Judgment and perception are severely impaired."
-			if (reactiondelta >= 177.56 && < 222)
-			  return "0.16-0.20 <br> Nausea may appear. Experiencing loss of motor control, judgment, and perception."
+				return "0.0-0.4";
+			if (reactiondelta >= 44.22 && reactiondelta < 77.56)
+			  return "0.4-0.7"
+      		if (reactiondelta >= 77.56 && reactiondelta < 110.89)
+			  return "0.07-0.10"
+			if (reactiondelta >= 110.89 && reactiondelta < 144.22)
+			  return "0.10-0.13"
+			if (reactiondelta >= 144.22 && reactiondelta < 177.56)
+			  return "0.13-0.16 \n Loss of motor control. Judgment and perception are severely impaired."
+			if (reactiondelta >= 177.56 && reactiondelta < 222)
+			  return "0.16-0.20"
 			if (reactiondelta >= 222)
-			  return ">0.20 <br> May need help to stand or walk. Blackouts are likely at this level. Dangerous levels of alcohol are in your body. It’s probably best to stop."
+			  return "> 0.20"
+		}
+
+		function reactionToPhrase() {
+			var reactiondelta = reactionTime - baselineReaction;
+			if (reactiondelta < 44.22)
+				return "No loss of coordination, slight euphoria and loss of shyness. Mildly relaxed and maybe a little lightheaded.";
+			if (reactiondelta >= 44.22 && reactiondelta < 77.56)
+			  return "Some minor impairment of reasoning and memory, lowering of caution. Your behavior may become exaggerated and emotions intensified."
+      		if (reactiondelta >= 77.56 && reactiondelta < 110.89)
+			  return "Your reaction time is starting to be impaired. It is illegal to drive at this level."
+			if (reactiondelta >= 110.89 && reactiondelta < 144.22)
+			  return "Significant impairment of motor coordination, speech balance, vision, hearing and loss of good judgment."
+			if (reactiondelta >= 144.22 && reactiondelta < 177.56)
+			  return "Loss of motor control. Judgment and perception are severely impaired."
+			if (reactiondelta >= 177.56 && reactiondelta < 222)
+			  return "Nausea may appear. Experiencing loss of motor control, judgment, and perception."
+			if (reactiondelta >= 222)
+			  return "May need help to stand or walk. Blackouts are likely at this level. Dangerous levels of alcohol are in your body. It’s probably best to stop."
 		}
 
 		var	$window = $(window),
