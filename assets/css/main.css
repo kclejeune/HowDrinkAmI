@@ -65,6 +65,38 @@
 	padding-bottom: 0.5em;
 }
 
+.reactionTestButton {
+	text-align: center;
+	padding-left: 65px;
+  font-size: 400%;
+}
+
+#reactionNumber {
+	width: 40px;
+	height: 40px;
+	overflow: auto
+}
+
+#reactionNumber p {
+	font-size: 200%;
+}
+
+.reactionTestStartBtn {
+	font-size: 300%;
+	position: relative;
+	top: 1em;
+	left: 65px;
+	border-color: white;
+	border-style: solid;
+	border-radius: 4px;
+	padding: 20px;
+
+}
+.liReactionTestStartBtn {
+	list-style: none !important;
+	text-decoration: none !important;
+}
+
 ul {
 	border-color: white;
 	border-radius: 4px;
@@ -940,22 +972,29 @@ ul {
 	}
 
 	table {
-		margin: 0 0 2rem 0;
+		margin-top: 6rem;
+		margin-bottom: 2em;
 		width: 100%;
+		vertical-align: top;
+		border-radius: 10px !important;
 	}
+
 
 		table tbody tr {
 			border: solid 1px #ffffff;
 			border-left: 0;
 			border-right: 0;
+
 		}
 
-			table tbody tr:nth-child(2n + 1) {
-				background-color: rgba(255, 255, 255, 0.075);
-			}
+		table {
+			background: #565656;
+		}
 
 		table td {
-			padding: 0.75em 0.75em;
+			padding-top: 2em;
+			padding-bottom: 2em;
+			border: 1.5px solid white;
 		}
 
 		table th {
