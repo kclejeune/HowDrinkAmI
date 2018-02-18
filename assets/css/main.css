@@ -1444,6 +1444,8 @@ ul {
 
 				#header .logo .icon:before {
 					font-size: 1.75rem;
+					padding-right: 6px;
+					padding-top: 7px;
 				}
 
 			#header .content .inner {
