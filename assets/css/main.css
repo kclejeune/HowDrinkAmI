@@ -274,6 +274,13 @@ ul {
 	padding-bottom: 1em;
 }
 
+#resultBaseH2 {
+	border-bottom: none;
+	font-size: 250%;
+	padding-bottom: 1em;
+}
+
+
 #resultsH3 {
 	padding-bottom: 2em;
 	font-size: 110%;

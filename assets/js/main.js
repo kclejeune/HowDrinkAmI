@@ -19,7 +19,7 @@
 
         var baseLine = 0;
         var reactionTime = 0;
-        var baseLineReaction = 1000;
+        var baseLineReaction;
         var showNumberTime = 0;
         var numberOfReactions = 0;
         var randomReactionNumber = 0;
@@ -37,10 +37,12 @@
                 $getReaction();
             } else {
                 reactionTime = reactionTime / 3;
+                $(".reactionTestStartBtn").css('visibility', 'visible');
                 if (baseLine === 1) {
                     addCookie(reactionTime);
                     baseLine = 0;
-                    window.location.href = "./index.html";
+                    $("#resultBaseH2").text("" + Math.round(reactionTime) + " ms");
+                    window.location.href = "./index.html#BaseReactionTimeResults";
                 } else {
                     $("#resultsH2").text("BAC: " + reactionToBAC());
                     $("#resultsH3").text(reactionToPhrase());
@@ -81,14 +83,13 @@
 
             $getReaction();
             $(".reactionTestStartBtn").css('visibility', 'hidden');
-            if (getCookie() == null) {
-                baseLineReaction = 1000;
+            if (getCookie() == null && baseLine != 1) {
+                alert("Please set base reaction time.")
+                window.location.href = "./index.html#settings";
             } else {
                 baseLineReaction = parseFloat(getCookie());
             }
 
-
-            //$getReaction();
         });
 
 

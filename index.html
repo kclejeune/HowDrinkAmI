@@ -40,97 +40,73 @@
 						</nav>
 					</header>
 					<!-- Main -->
-								<div id="main">
+					
+					<div id="main">
 
-									<!-- Intro -->
+						<!-- Intro -->
+						<article id="intro" class="reactionTest" >
 
-										<article id="intro" class="reactionTest" >
+							<div id='reactionContainer'>
+								<div class = "reactionTestRunCount"></div>
 
-											<div id='reactionContainer'>
-												<div class = "reactionTestRunCount">
+								<div id="reactionNumber"><p></p></div>
 
-												</div>
+								<table class="table">
+    								<tr>
+    									<td>
+    										<a id = "btn1" class = "reactionTestButton">1</a>
+    									</td>
+    									<td>
+    										<a id = "btn2" class = "reactionTestButton">2</a>
+    									</td>
+    								</tr>
+    								<tr>
+    									<td>
+    										<a id = "btn3" class = "reactionTestButton">3</a>
+    									</td>
+    									<td>
+    										<a id = "btn4" class = "reactionTestButton">4</a>
+    									</td>
+    								</tr>
+								</table>
 
-												<div id="reactionNumber"> <p></p>
+								<ol class="liReactionTestStartBtn"><a class="reactionTestStartBtn">START</a></ol>
+							</div>
+						</article>
 
-												</div>
+						<!-- settings -->
+						<article id="settings">
+							<h2 class="major">settings</h2>
+							<p class="settingText">Set your base reaction time for accurate results</p>
 
-												<table class="table">
-    												<tr>
-    													<td>
-    														<a id = "btn1" class = "reactionTestButton">1</a>
-    													</td>
-    													<td>
-    														<a id = "btn2" class = "reactionTestButton">2</a>
-    													</td>
-    												</tr>
-    												<tr>
-    													<td>
-    														<a id = "btn3" class = "reactionTestButton">3</a>
-    													</td>
-    													<td>
-    														<a id = "btn4" class = "reactionTestButton">4</a>
-    													</td>
-    												</tr>
-												</table>
+							<nav>
+								<ul>
+									<a class="begin" href="#intro">BEGIN</a>
+								</ul>
+							</nav>
+						</article>
 
-												<ol class="liReactionTestStartBtn"><a class="reactionTestStartBtn">START</a></ol>
+						<!-- base reaction results page -->
+						<article class=ReactionTimeResults id="BaseReactionTimeResults">
+							<h2 class="major">Your Base Reaction Time</h2>
+							<h2 class="major" id="resultBaseH2"></h2>
+							<div><a href="index.html" class="baseReactionMessage">Return to Home Page</a></div>
+						</article>
 
-    										</div>
-										</article>
+						<!-- results page -->
+						<article class=ReactionTimeResults id="ReactionTimeResults">
+							<h2 class="major">Your Results</h2>
+							<h2 class="major" id="resultsH2"></h2>
+							<h3 class="major" id="resultsH3"></h3>
+							<div><a href="index.html" class="ReactionMessage">Return to Home Page</a></div>
+						</article>
 
-									<!-- settings -->
-
-										<article id="settings">
-											<h2 class="major">settings</h2>
-											<p class="settingText">Set your base reaction time for accurate results</p>
-
-												<nav>
-													<ul>
-														<a class="begin" href="#intro">BEGIN</a>
-													</ul>
-												</nav>
-
-
-											</article>
-
-											<article id="BaseReactionTime">
-												<br>
-												<br>
-												<p>Kennan sucks<br>
-													at many things
-													<li>life</li>
-													<li>coding</li>
-													<nav>
-												  <a href="#BaseReactionTimeResults">java</a>
-												</nav>
-											  </p>
-												</article>
-
-												<!-- base reaction results page -->
-
-												<article class=ReactionTimeResults id="BaseReactionTimeResults">
-													<h2 class="major">Your Base Reaction Time</h2>
-														<div><a href="index.html" class="baseReactionMessage">Return to Home Page</a></div>
-													</article>
-
-													<!-- results page -->
-
-												<article class=ReactionTimeResults id="ReactionTimeResults">
-													<h2 class="major">Your Results</h2>
-													<h2 class="major" id="resultsH2"></h2>
-													<h3 class="major" id="resultsH3"></h3>
-														<div><a href="index.html" class="ReactionMessage">Return to Home Page</a></div>
-													</article>
-
-
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="assets/js/pouchdb.min.js"></script>
+						<!-- Scripts -->
+						<script src="assets/js/jquery.min.js"></script>
+						<script src="assets/js/skel.min.js"></script>
+						<script src="assets/js/util.js"></script>
+						<script src="assets/js/main.js"></script>
+						<script src="assets/js/pouchdb.min.js"></script>
 
 	</body>
 </html>
