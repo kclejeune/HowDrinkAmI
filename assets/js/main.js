@@ -18,6 +18,7 @@
 	$(function() {
 
 		var baseline = 0;
+		var baselineReaction = 1000;
 		var reactionTime = 0;
 		var showNumberTime = 0;
 		var numberOfReactions = 0;
@@ -108,10 +109,21 @@
 		}
 
 		function reactionToBAC(){
-			var bac = .0009*(reactionTime)+.0002;
-			var highBAC = Math.round(bac*1.1*1000) / 1000;
-			var lowBAC = Math.round(bac*.9*1000) / 1000; 
-			return "" + lowBAC + " - " + highBAC;
+			var reactiondelta = reactionTime - baselineReaction;
+			if (reactiondelta < 44.22)
+				return "0.0-0.4 <br> No loss of coordination, slight euphoria and loss of shyness. Mildly relaxed and maybe a little lightheaded.";
+			if (reactiondelta >= 44.22 && < 77.56)
+			  return "0.4-0.7 <br> Some minor impairment of reasoning and memory, lowering of caution. Your behavior may become exaggerated and emotions intensified."
+      if (reactiondelta >= 77.56 && < 110.89)
+			  return "0.07-0.10 <br> Your reaction time is starting to be impaired. It is illegal to drive at this level."
+		  if (reactiondelta >= 110.89 && < 144.22)
+			  return "0.10-0.13 <br> Significant impairment of motor coordination, speech balance, vision, hearing and loss of good judgment."
+			if (reactiondelta >= 144.22 && < 177.56)
+			  return "0.13-0.16 <br> Loss of motor control. Judgment and perception are severely impaired."
+			if (reactiondelta >= 177.56 && < 222)
+			  return "0.16-0.20 <br> Nausea may appear. Experiencing loss of motor control, judgment, and perception."
+			if (reactiondelta >= 222)
+			  return ">0.20 <br> May need help to stand or walk. Blackouts are likely at this level. Dangerous levels of alcohol are in your body. It’s probably best to stop."
 		}
 
 		var	$window = $(window),
