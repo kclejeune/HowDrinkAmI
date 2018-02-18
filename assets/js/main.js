@@ -23,9 +23,14 @@
         var showNumberTime = 0;
         var numberOfReactions = 0;
         var randomReactionNumber = 0;
+        var reactionTestRunning = 0;
 
 
         $stopTimer = function (event) {
+            if (!reactionTestRunning) {
+            	return;
+            }
+
             var timeNumberSelected = $getCurrentTime();
             $("#reactionNumber").find("p").text("");
             if (showNumberTime < timeNumberSelected && randomReactionNumber == event.data.button) {
@@ -37,7 +42,7 @@
                 $getReaction();
             } else {
                 reactionTime = reactionTime / 3;
-                //$(".reactionTestStartBtn").css('visibility', 'visible');
+                reactionTestRunning = 0;
                 if (baseLine === 1) {
                     addCookie(reactionTime);
                     baseLine = 0;
@@ -83,8 +88,9 @@
             } else {
                 baseLineReaction = parseFloat(getCookie());
                 $(".reactionTestStartBtn").css('visibility', 'hidden');
+                reactionTestRunning = 1;
+            	$getReaction();
             }
-            $getReaction();
 
         });
 
