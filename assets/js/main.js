@@ -27,7 +27,7 @@
 
 		$stopTimer = function(event){
 			var timeNumberSelected = $getCurrentTime();
-			$("#reactionNumber").text("");
+			$("#reactionNumber p").text("");
 			if(showNumberTime < timeNumberSelected && randomReactionNumber == event.data.button) {
 				reactionTime += timeNumberSelected - showNumberTime;
 				numberOfReactions++;
@@ -49,7 +49,7 @@
 			randomReactionNumber = Math.floor($getRandomNumber());
 
 			setTimeout(function() {
-  				$("#reactionNumber").text(randomReactionNumber);
+  				$("#reactionNumber p").text(randomReactionNumber);
 			}, waitTime);
 		}
 
