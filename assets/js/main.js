@@ -22,6 +22,7 @@
 		var showNumberTime = 0;
 		var numberOfReactions = 0;
 		var randomReactionNumber = 0;
+		var db = new PouchDB('baseline');
 
 
 		$stopTimer = function(event){
@@ -35,7 +36,10 @@
 			if (numberOfReactions < 3){
 				$getReaction();
 			} else {
-				alert(reactionTime/3000);
+				reactionTime = reactionTime/3;
+				if(baseline == 1) {
+					addTodo(reactionTime);
+				}
 			}
 		}
 
@@ -53,6 +57,15 @@
 		$("#btn2").click({button: 2}, $stopTimer);
 		$("#btn3").click({button: 3}, $stopTimer);
 		$("#btn4").click({button: 4}, $stopTimer);
+
+		$(".begin").click(function() {
+			reactionTime = 0;
+			showNumberTime = 0;
+			numberOfReactions = 0;
+			randomReactionNumber = 0;
+			baseline = 1;
+
+		});
 
 		$(".reactionTestStartBtn").click(function() {
 			$(".reactionTest").css('background-color', '#808080');
@@ -74,6 +87,19 @@
 
 		$getRandomNumber = function(){
 			return (Math.random()*4+1);
+		}
+
+		function addTodo(base) {
+			var todo = {
+				_id: 1,
+				baseline: base
+			};
+
+			db.put(todo, function callback(err, result) {
+				if (!err) {
+					console.log('Successfully posted a todo!');
+				}
+			});
 		}
 
 		var	$window = $(window),
