@@ -80,7 +80,7 @@
 			randomReactionNumber = 0;
 
 			$getReaction();
-			$(".reactionTestStartBtn").css('visibility','visible');
+			$(".reactionTestStartBtn").css('visibility','hidden');
 
 			$(".reactionTest").css('background-color', '#1B1F22');
 		});
@@ -110,7 +110,7 @@
 		function reactionToBAC(){
 			var bac = .0009*(reactionTime)+.0002;
 			var highBAC = Math.round(bac*1.1*1000) / 1000;
-			var lowBAC = Math.round(bac*.9*1000) / 1000; 
+			var lowBAC = Math.round(bac*.9*1000) / 1000;
 			return "" + lowBAC + " - " + highBAC;
 		}
 
