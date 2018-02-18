@@ -25,10 +25,9 @@
 .baseReactionMessage {
 	font-size: 200%;
 	text-align: center;
-
 	position: relative;
-	top: 7em;
-	left: 0.3em;
+	top: 3em;
+	left: .75em;
 	border-color: white;
 	border-style: solid;
 	padding-top: 1em;
