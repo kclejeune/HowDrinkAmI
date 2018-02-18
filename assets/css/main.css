@@ -67,18 +67,25 @@
 
 .reactionTestButton {
 	text-align: center;
-	padding-left: 65px;
+	padding-left: 67px;
   font-size: 400%;
 }
 
 #reactionNumber {
-	width: 40px;
-	height: 40px;
-	overflow: auto
+	width: 60px;
+	height: 60px;
+	overflow: auto;
+	z-index: 900;
+	position: fixed;
+	top: 6em;
 }
 
 #reactionNumber p {
-	font-size: 200%;
+	font-size: 600%;
+	position: fixed;
+	width: 9em;
+  left: 164px;
+	top: -0.65em;
 }
 
 .reactionTestStartBtn {
@@ -972,7 +979,7 @@ ul {
 	}
 
 	table {
-		margin-top: 6rem;
+		margin-top: 9rem;
 		margin-bottom: 2em;
 		width: 100%;
 		vertical-align: top;
