@@ -7,10 +7,6 @@ We aim to provide a convenient solution to prevent binge drinking.  Using a simp
 ## Getting Started
 HowDrinkAmI can be accessed by mobile site (kclejeune.github.io/HowDrinkAmI) or by mobile application.  
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
 ## Built With
 Creative Commons Web Template, courtesy of HTML5Up
 
@@ -27,5 +23,5 @@ http://creativecommons.org/licenses/by/3.0/
 Details available under LICENSE.txt
 
 ## Acknowledgments
-HTML5Up - for providing a sick website template
+HTML5Up - for providing a sweet website template
 
