@@ -1,8 +1,7 @@
 # How Drink am I?
-
+a project for HackCWRU 2018
 ## What You Need to Know
-Created for hackCWRU 2018 - 
-We aim to provide a convenient solution to prevent binge drinking.  Using a simple linear regression model, we can correlate the delay from a base reaction time with blood alcohol levels. The first time the user opens the app, they will be asked to complete a simple test that takes no longer than 30 seconds in order to establish a base reaction time. Once this has been initiated, the next time the user accesses the app and has been drinking, they can take the test to see what their blood alcohol level is. The goal of the app is to allow users to see when they have had too much to drink, or when it is ok to have more. 
+We provide a simplistic, research driven solution to prevent binge drinking.  Using a linear regression model, we can correlate an individual's "choice reaction time," or CRT, (a choice which requires both physical and cognitive processing) with their blood alcohol concentration. Upon first use, users will be asked to complete a simple test that takes no longer than 30 seconds to establish a base reaction time. Once this data is collected, the app can properly function. When a user begins drinking, they will perform the same test from before, using the change from a baseline as an independent variable. We aim to help users drink safely, hopefully reducing the ever growing issue of alcohol abuse among collegiate youth.
 
 ## Getting Started
 HowDrinkAmI can be accessed by mobile site:
